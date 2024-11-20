@@ -1,4 +1,4 @@
-# w3scools python dictionary
+# w3schools python dictionary
 
 # Van egy kulcsunk és annak van egy értéke
 
@@ -32,6 +32,7 @@ ember = {}
 ember["név"] = "Gábor Béla"
 ember["kor"] = 19
 ember["házas"] = "nem"
+
 
 print(ember)
 print(ember["név"])

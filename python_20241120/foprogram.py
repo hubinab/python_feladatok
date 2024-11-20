@@ -1,4 +1,4 @@
-# w3scools-ba a python.modules-nál
+# w3schools-ba a python.modules-nál
 
 # Így meg kell addni a fuggveny. -ot (ha lehet így használjuk!):
 # import fuggvenyek
