@@ -3,9 +3,6 @@
 # A  kiírásoknál  kövesse  a  lenti  mintát,  figyeljen  rá,  hogy  a  feladat  sorszáma  jelenjen  meg  a 
 # megoldás előtt! 
 
-
-
-
 # Kérje be a felhasználótól a barátok számát!
 baratok_szama = int(input("1. feladat Add meg a barátok számát: "))
 
