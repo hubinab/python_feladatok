@@ -1,0 +1,58 @@
+[
+    {
+        "NEV": "V\u00e9g B\u00e9la",
+        "SZEV": 1967,
+        "FIZU": 687000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 1998,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "Varga \u00c9va",
+        "SZEV": 1964,
+        "FIZU": 458000,
+        "STAT": "INAKT\u00cdV",
+        "STARTEV": 1996,
+        "INAKTEV": 2016
+    },
+    {
+        "NEV": "Nagy Zsombor",
+        "SZEV": 1973,
+        "FIZU": 555000,
+        "STAT": "INAKT\u00cdV",
+        "STARTEV": 1992,
+        "INAKTEV": 2020
+    },
+    {
+        "NEV": "Varga Tam\u00e1s",
+        "SZEV": 1978,
+        "FIZU": 540000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 2024,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "Rettenet \u00c1rp\u00e1d",
+        "SZEV": 1978,
+        "FIZU": 765000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 2001,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "T\u00f3th Ingrid",
+        "SZEV": 1990,
+        "FIZU": 550000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 2012,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "Folt Imre",
+        "SZEV": 1960,
+        "FIZU": 660000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 1998,
+        "INAKTEV": 0
+    }
+]
