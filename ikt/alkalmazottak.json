@@ -54,5 +54,53 @@
         "STAT": "AKT\u00cdV",
         "STARTEV": 1998,
         "INAKTEV": 0
+    },
+    {
+        "NEV": "Nagy Lajos",
+        "SZEV": 1988,
+        "FIZU": 300000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 2013,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "T\u00f3th Evelin",
+        "SZEV": 1999,
+        "FIZU": 450000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 2022,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "Horv\u00e1th B\u00e9la",
+        "SZEV": 1969,
+        "FIZU": 1020000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 1994,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "Szab\u00f3 M\u00e1t\u00e9",
+        "SZEV": 1994,
+        "FIZU": 789000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 2020,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "Ambrus Attila",
+        "SZEV": 1959,
+        "FIZU": 782000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 2001,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "B\u00e1rdos G\u00e9za",
+        "SZEV": 1982,
+        "FIZU": 567123,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 2000,
+        "INAKTEV": 0
     }
 ]
