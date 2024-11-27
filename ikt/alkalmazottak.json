@@ -102,5 +102,13 @@
         "STAT": "AKT\u00cdV",
         "STARTEV": 2000,
         "INAKTEV": 0
+    },
+    {
+        "NEV": "Kov\u00e1cs G\u00e9za",
+        "SZEV": 1987,
+        "FIZU": 456781,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 2014,
+        "INAKTEV": 0
     }
 ]
