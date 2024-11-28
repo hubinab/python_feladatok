@@ -70,7 +70,8 @@ print("-"*30)
 # van a legközelebb, ami egyenlő vele vagy magyobb nála:
 P_keres = 0
 for i in range(len(P_List)):
-    if P_List[i] >= P/1000:
+    # A listában W-ban van, ezért 1000-el osztjuk a kiszámolt P-t
+    if P_List[i] >= P/1000: 
         P_keres = P_List[i]
         break
 print("Ellenállás teljesítménye legyen: ", P_keres, "W")
