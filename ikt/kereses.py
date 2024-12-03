@@ -19,13 +19,13 @@ def lista (list, tol=None, ig=None):
     sort_list = sorted(list, key=lambda x: x["NEV"])
 
     # Fejléc
-    print(f"{"#":<3} {"Név":<40} {"Sz.év":>5} {"Fizetés":>15} {"Státusz":<7} {"St.év":>5} {"In.év":5}")
+    print(f"{'#':<3} {'Név':<40} {'Sz.év':>5} {'Fizetés':>15} {'Státusz':<7} {'St.év':>5} {'In.év':5}")
     print("-"*86)
 
     # Elemek kiírása
     for i in range(tol, ig):
         fizu = f"{sort_list[i]['FIZU']:,}"
-        print(f"{i+1:<3} {sort_list[i]["NEV"]:<40} {sort_list[i]["SZEV"]:>5} {fizu:>15} {sort_list[i]["STAT"]:<7} {sort_list[i]["STARTEV"]:>5} {sort_list[i]["INAKTEV"]:>5}")
+        print(f"{i+1:<3} {sort_list[i]['NEV']:<40} {sort_list[i]['SZEV']:>5} {fizu:>15} {sort_list[i]['STAT']:<7} {sort_list[i]['STARTEV']:>5} {sort_list[i]['INAKTEV']:>5}")
 
 # Összes rekord listázása 10-esével
 def lista10 (list):

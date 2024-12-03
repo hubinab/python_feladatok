@@ -64,7 +64,7 @@ def modositas (list):
             print("Nincs ilyen alkalmazott.")
             continue
 
-        inp = input(f"Kérem a módosítsa a fizetést ({list[i]["FIZU"]}): ")
+        inp = input(f"Kérem a módosítsa a fizetést ({list[i]['FIZU']}): ")
         if inp == "#":
             break
         if inp != "":
@@ -73,7 +73,7 @@ def modositas (list):
             fizu = list[i]["FIZU"]
 
         if list[i]["STAT"] == "AKTÍV":
-            inp = input(f"Kérem módosítsa az alkalmazott kezdőévét({list[i]["STARTEV"]}): ")
+            inp = input(f"Kérem módosítsa az alkalmazott kezdőévét({list[i]['STARTEV']}): ")
             if inp == "#":
                 break
             if inp != "":
@@ -81,7 +81,7 @@ def modositas (list):
             else:
                 startev = list[i]["STARTEV"]
         else:
-            inp = input(f"Kérem módosítsa, hogy mely évtől lett inaktív ({list[i]["INAKTEV"]}): ")
+            inp = input(f"Kérem módosítsa, hogy mely évtől lett inaktív ({list[i]['INAKTEV']}): ")
             if inp == "#":
                 break
             if inp != "":
@@ -115,7 +115,7 @@ def torles (list):
         if i == None:
             print("Nincs ilyen alkalmazott.")
             continue
-        inp = input(f"Biztos törli a(z) {list[i]["NEV"]} alkalmazottat? (IGEN/NEM): ")
+        inp = input(f"Biztos törli a(z) {list[i]['NEV']} alkalmazottat? (IGEN/NEM): ")
         if inp == "IGEN":
             del list[i]
             print(f"A(z) {nev} alkalmazott adatai törölve.")
@@ -143,9 +143,9 @@ def aktinakt (list):
             print("Nincs ilyen alkalmazott.")
             continue
         if list[i]["STAT"] == "AKTÍV":
-            inp = input(f"Biztos inaktiválja a(z) {list[i]["NEV"]} alkalmazottat? (IGEN/NEM): ")
+            inp = input(f"Biztos inaktiválja a(z) {list[i]['NEV']} alkalmazottat? (IGEN/NEM): ")
             if inp == "IGEN":
-                inp = input(f"Milyen évtől legyen inaktív (Kezdés éve: {list[i]["STARTEV"]}):")
+                inp = input(f"Milyen évtől legyen inaktív (Kezdés éve: {list[i]['STARTEV']}):")
                 if inp == "#":
                     break
                 if int(inp) < list[i]["STARTEV"]:
@@ -154,7 +154,7 @@ def aktinakt (list):
                     list[i]["STAT"] = "INAKTÍV"
                     print(f"A(z) {nev} alkalmazott inaktív státuszba lett téve.")
         else:
-            inp = input(f"Biztos aktiválja a(z) {list[i]["NEV"]} alkalmazottat? (IGEN/NEM): ")
+            inp = input(f"Biztos aktiválja a(z) {list[i]['NEV']} alkalmazottat? (IGEN/NEM): ")
             if inp == "IGEN":
                     list[i]["STAT"] = "AKTÍV"
                     list[i]["INAKTEV"] = 0
