@@ -16,10 +16,11 @@ def lista (list, tol=None, ig=None):
         ig = len(list)
 
     # Rendezés
-    sort_list = sorted(list, key=lambda x: x["NEV"])
+    #sort_list = sorted(list, key=lambda x: x["NEV"])
+    sort_list = list
 
     # Fejléc
-    print(f"{'#':<3} {'Név':<40} {'Sz.év':>5} {'Fizetés':>15} {'Státusz':<7} {'St.év':>5} {'In.év':5}")
+    print(f"{'#':<3} {'Név':<40} {'Sz.év':>5} {'Fizetés':>15} {'Státusz':<7} {'St.év':>5} {'In.év':>5}")
     print("-"*86)
 
     # Elemek kiírása
@@ -28,9 +29,13 @@ def lista (list, tol=None, ig=None):
         print(f"{i+1:<3} {sort_list[i]['NEV']:<40} {sort_list[i]['SZEV']:>5} {fizu:>15} {sort_list[i]['STAT']:<7} {sort_list[i]['STARTEV']:>5} {sort_list[i]['INAKTEV']:>5}")
 
 # Összes rekord listázása 10-esével
-def lista10 (list):
+def lista10 (list, karb=False, tol=None):
     inp = ""
-    i = 0
+    if tol == None:
+        tol = 0
+    else:
+        i = tol
+    
     while inp != "#":
         j = i+9
         if j >= len(list):
@@ -39,8 +44,16 @@ def lista10 (list):
         lista(list, i, j)
         i = j
         if i >= len(list):
-            break
+        #    if karb:
+            i = 0
+        #    else:
+        #        break
         
-        inp = input("Tovább=Enter, Kilépés=# -->")
-
-        
+        if karb:
+            print("Tovább=Enter, Kilépés=#")
+            inp = input("Vagy adja meg a rekord sorszámát: --> ")
+            if inp != "":
+                return inp
+        else:
+            inp = input("Tovább=Enter, Kilépés=# --> ")
+                

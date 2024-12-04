@@ -13,7 +13,7 @@ def m_karbantartas (list):
         menube = input("--> ")
         match menube:
             case "1": karbantartas.felvitel (list=list)
-            case "2": karbantartas.modositas (list=list)
+            case "2": karbantartas.modositas (lista=list)
             case "3": karbantartas.torles (list=list)
             case "4": karbantartas.aktinakt (list=list)
 

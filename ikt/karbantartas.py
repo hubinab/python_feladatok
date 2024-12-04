@@ -38,8 +38,9 @@ def felvitel (list):
         list.append ({"NEV":nev, "SZEV":szev, "FIZU":fizu, "STAT":stat, "STARTEV":startev, "INAKTEV":inaktev})
         print(f"A(z) {nev} alkalmazottat sikeresen felvettük.")
         print("---------------------------------")
+        kereses.lista10(list=list, karb=False, tol=len(list)-1)
 
-def modositas (list):
+def modositas (lista):
     inp = ""
     nev = ""
     szev = ""
@@ -49,49 +50,61 @@ def modositas (list):
     i = 0
 
     while inp != "#":
+        """
         print("Kilépéshez adja meg a # karaktert.")
         print("Kérem adja meg az alábbi adatokat. Ha nem ad meg semmit, akkor az adat nem változik.")
+        
         inp = input("Alkalmazott neve: ")
-        if inp == "#":
+        if inp == "#" or inp == "":
             break
         nev = inp
         inp = input("Alkalmazott születési éve: ")
-        if inp == "#":
+        if inp == "#" or inp == "":
             break
         szev = int(inp)
         i = kereses.pri_keres(nev, szev, list)
         if i == None:
             print("Nincs ilyen alkalmazott.")
             continue
+        """
+        szamok = list(range(1, len(lista)+1))
+        inp = kereses.lista10(list=lista, karb=True, tol=i)
+        if inp in str(szamok):
+            i = int(inp)-1
+        else:
+            break
 
-        inp = input(f"Kérem a módosítsa a fizetést ({list[i]['FIZU']}): ")
+        print("Kilépéshez adja meg a # karaktert.")
+        print("Kérem adja meg az alábbi adatokat. Ha nem ad meg semmit, akkor az adat nem változik.")
+        print(f"A(z) {lista[i]['NEV']}, {lista[i]['SZEV']} alkalmazott módosítása!")
+        inp = input(f"Kérem módosítsa a fizetést ({lista[i]['FIZU']}): ")
         if inp == "#":
             break
         if inp != "":
             fizu = int(inp)
         else:
-            fizu = list[i]["FIZU"]
+            fizu = lista[i]["FIZU"]
 
-        if list[i]["STAT"] == "AKTÍV":
-            inp = input(f"Kérem módosítsa az alkalmazott kezdőévét({list[i]['STARTEV']}): ")
+        if lista[i]["STAT"] == "AKTÍV":
+            inp = input(f"Kérem módosítsa az alkalmazott kezdőévét({lista[i]['STARTEV']}): ")
             if inp == "#":
                 break
             if inp != "":
                 startev = int(inp)
             else:
-                startev = list[i]["STARTEV"]
+                startev = lista[i]["STARTEV"]
         else:
-            inp = input(f"Kérem módosítsa, hogy mely évtől lett inaktív ({list[i]['INAKTEV']}): ")
+            inp = input(f"Kérem módosítsa, hogy mely évtől lett inaktív ({lista[i]['INAKTEV']}): ")
             if inp == "#":
                 break
             if inp != "":
                 inaktev = int(inp)
             else:
-                inaktev = list[i]["INAKTEV"]
+                inaktev = lista[i]["INAKTEV"]
 
-        list[i]["FIZU"] = fizu
-        list[i]["STARTEV"] = startev
-        list[i]["INAKTEV"] = inaktev
+        lista[i]["FIZU"] = fizu
+        lista[i]["STARTEV"] = startev
+        lista[i]["INAKTEV"] = inaktev
         print(f"A(z) {nev} alkalmazott adatai módosítva lettek.")
         
 def torles (list):

@@ -26,7 +26,7 @@
     {
         "NEV": "Varga Tam\u00e1s",
         "SZEV": 1978,
-        "FIZU": 540000,
+        "FIZU": 347000,
         "STAT": "AKT\u00cdV",
         "STARTEV": 2024,
         "INAKTEV": 0
@@ -34,7 +34,7 @@
     {
         "NEV": "Rettenet \u00c1rp\u00e1d",
         "SZEV": 1978,
-        "FIZU": 765000,
+        "FIZU": 845000,
         "STAT": "AKT\u00cdV",
         "STARTEV": 2001,
         "INAKTEV": 0
@@ -109,6 +109,30 @@
         "FIZU": 456781,
         "STAT": "AKT\u00cdV",
         "STARTEV": 2014,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "Tarajos Alad\u00e1r",
+        "SZEV": 1963,
+        "FIZU": 672000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 1990,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "Radics M\u00e1rton",
+        "SZEV": 1997,
+        "FIZU": 871000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 2020,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "Nagy G\u00e1bor",
+        "SZEV": 1992,
+        "FIZU": 493000,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 2010,
         "INAKTEV": 0
     }
 ]
