@@ -74,7 +74,7 @@
     {
         "NEV": "Horv\u00e1th B\u00e9la",
         "SZEV": 1969,
-        "FIZU": 1020000,
+        "FIZU": 1200000,
         "STAT": "AKT\u00cdV",
         "STARTEV": 1994,
         "INAKTEV": 0
@@ -133,6 +133,14 @@
         "FIZU": 493000,
         "STAT": "AKT\u00cdV",
         "STARTEV": 2010,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "Rubeus Hagrid",
+        "SZEV": 1977,
+        "FIZU": 876000,
+        "STAT": "INAKT\u00cdV",
+        "STARTEV": 1990,
         "INAKTEV": 0
     }
 ]
