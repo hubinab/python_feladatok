@@ -1,7 +1,8 @@
 import kereses
 
-def felvitel (list):
+def felvitel (szotar_lista):
     inp = ""
+    i = 0
     nev = ""
     szev = ""
     fizu = ""
@@ -21,7 +22,7 @@ def felvitel (list):
             break
         szev = int(inp)
 
-        i = kereses.pri_keres(nev, szev, list)
+        i = kereses.pri_keres(nev, szev, szotar_lista)
         if i != None:
             print("Már van ilyen alkalmazott.")
             continue
@@ -35,40 +36,30 @@ def felvitel (list):
         if inp == "#":
             break
         startev = int(inp)
-        list.append ({"NEV":nev, "SZEV":szev, "FIZU":fizu, "STAT":stat, "STARTEV":startev, "INAKTEV":inaktev})
+        szotar_lista.append ({"NEV":nev, "SZEV":szev, "FIZU":fizu, "STAT":stat, "STARTEV":startev, "INAKTEV":inaktev})
         print(f"A(z) {nev} alkalmazottat sikeresen felvettük.")
         print("---------------------------------")
-        kereses.lista10(list=list, karb=False, tol=len(list)-1)
+        kereses.lista10(szotar_lista, False, len(szotar_lista)-1)
 
-def modositas (lista):
+def modositas (szotar_lista):
     inp = ""
-    nev = ""
-    szev = ""
+    i = 0
     fizu = ""
     startev = 0
     inaktev = 0
-    i = 0
 
     while inp != "#":
-        """
-        print("Kilépéshez adja meg a # karaktert.")
-        print("Kérem adja meg az alábbi adatokat. Ha nem ad meg semmit, akkor az adat nem változik.")
-        
-        inp = input("Alkalmazott neve: ")
-        if inp == "#" or inp == "":
-            break
-        nev = inp
-        inp = input("Alkalmazott születési éve: ")
-        if inp == "#" or inp == "":
-            break
-        szev = int(inp)
-        i = kereses.pri_keres(nev, szev, list)
-        if i == None:
-            print("Nincs ilyen alkalmazott.")
-            continue
-        """
-        szamok = list(range(1, len(lista)+1))
-        inp = kereses.lista10(list=lista, karb=True, tol=i)
+
+        # A szamok-ba betesszuk a jelenlegi 
+        # rekordok szamsorait listában
+        # [1,2,3,4,5,...,1000,...]
+        szamok = list(range(1, len(szotar_lista)+1))
+        inp = kereses.lista10(szotar_lista, True, i)
+        # ha benne van a szam amit megadott, 
+        # akkor az lesz a kivalasztott rekord,
+        # egyébként kilépünk (vagy #-et adott, vagy 
+        # olyan számot amivel nem létezik rekord).
+        # Azért kell a -1, mert 1-től listáztunk
         if inp in str(szamok):
             i = int(inp)-1
         else:
@@ -76,101 +67,107 @@ def modositas (lista):
 
         print("Kilépéshez adja meg a # karaktert.")
         print("Kérem adja meg az alábbi adatokat. Ha nem ad meg semmit, akkor az adat nem változik.")
-        print(f"A(z) {lista[i]['NEV']}, {lista[i]['SZEV']} alkalmazott módosítása!")
-        inp = input(f"Kérem módosítsa a fizetést ({lista[i]['FIZU']}): ")
+        print(f"A(z) {szotar_lista[i]['NEV']}, {szotar_lista[i]['SZEV']} alkalmazott módosítása!")
+
+        inp = input(f"Kérem módosítsa a fizetést ({szotar_lista[i]['FIZU']}): ")
         if inp == "#":
             break
         if inp != "":
             fizu = int(inp)
         else:
-            fizu = lista[i]["FIZU"]
+            fizu = szotar_lista[i]["FIZU"]
 
-        if lista[i]["STAT"] == "AKTÍV":
-            inp = input(f"Kérem módosítsa az alkalmazott kezdőévét({lista[i]['STARTEV']}): ")
+        if szotar_lista[i]["STAT"] == "AKTÍV":
+            inp = input(f"Kérem módosítsa az alkalmazott kezdőévét({szotar_lista[i]['STARTEV']}): ")
             if inp == "#":
                 break
             if inp != "":
                 startev = int(inp)
             else:
-                startev = lista[i]["STARTEV"]
+                startev = szotar_lista[i]["STARTEV"]
         else:
-            inp = input(f"Kérem módosítsa, hogy mely évtől lett inaktív ({lista[i]['INAKTEV']}): ")
+            inp = input(f"Kérem módosítsa, hogy mely évtől lett inaktív ({szotar_lista[i]['INAKTEV']}): ")
             if inp == "#":
                 break
             if inp != "":
                 inaktev = int(inp)
             else:
-                inaktev = lista[i]["INAKTEV"]
+                inaktev = szotar_lista[i]["INAKTEV"]
 
-        lista[i]["FIZU"] = fizu
-        lista[i]["STARTEV"] = startev
-        lista[i]["INAKTEV"] = inaktev
-        print(f"A(z) {nev} alkalmazott adatai módosítva lettek.")
+        szotar_lista[i]["FIZU"] = fizu
+        szotar_lista[i]["STARTEV"] = startev
+        szotar_lista[i]["INAKTEV"] = inaktev
+        print(f"A(z) {szotar_lista[i]['NEV']} alkalmazott adatai módosítva lettek.")
+        print("---------------------------------")
         
-def torles (list):
+def torles (szotar_lista):
     inp = ""
-    nev = ""
-    szev = ""
     i = 0
+    nev = ""
 
     while inp != "#":
         print("Kilépéshez adja meg a # karaktert.")
-        print("Kérem adja meg az alábbi adatokat.")
-        inp = input("Alkalmazott neve: ")
-        if inp == "#":
+
+        # A szamokba betesszuk a jelenlegi 
+        # rekordok szamsorait listában
+        # [1,2,3,4,5,...,1000,...]
+        szamok = list(range(1, len(szotar_lista)+1))
+        inp = kereses.lista10(szotar_lista, True, i)
+        # ha benne van a szam amit megadott, 
+        # akkor az lesz a kivalasztott rekord,
+        # egyébként kilépünk (vagy #-et adott, vagy 
+        # olyan számot amivel nem létezik rekord)
+        # azért kell a -1, mert 1-től listáztunk
+        if inp in str(szamok):
+            i = int(inp)-1
+        else:
             break
-        nev = inp
-        inp = input("Alkalmazott születési éve: ")
-        if inp == "#":
-            break
-        szev = int(inp)
-        i = kereses.pri_keres(nev, szev, list)
-        if i == None:
-            print("Nincs ilyen alkalmazott.")
-            continue
-        inp = input(f"Biztos törli a(z) {list[i]['NEV']} alkalmazottat? (IGEN/NEM): ")
+
+        nev = szotar_lista[i]["NEV"]
+        inp = input(f"Biztos törli a(z) {szotar_lista[i]['NEV']} alkalmazottat? (IGEN/NEM): ")
         if inp == "IGEN":
-            del list[i]
+            del szotar_lista[i]
             print(f"A(z) {nev} alkalmazott adatai törölve.")
-            
-def aktinakt (list):
+            print("---------------------------------")
+
+def aktinakt (szotar_lista):
     inp = ""
-    nev = ""
-    szev = ""
-    inaktev = 0
     i = 0
 
     while inp != "#":
         print("Kilépéshez adja meg a # karaktert.")
-        print("Kérem adja meg az alábbi adatokat.")
-        inp = input("Alkalmazott neve: ")
-        if inp == "#":
+        # A szamokba betesszuk a jelenlegi 
+        # rekordok szamsorait listában
+        # [1,2,3,4,5,...,1000,...]
+        szamok = list(range(1, len(szotar_lista)+1))
+        inp = kereses.lista10(szotar_lista, True, i)
+        # ha benne van a szam amit megadott, 
+        # akkor az lesz a kivalasztott rekord,
+        # egyébként kilépünk (vagy #-et adott, vagy 
+        # olyan számot amivel nem létezik rekord)
+        # azért kell a -1, mert 1-től listáztunk
+        if inp in str(szamok):
+            i = int(inp)-1
+        else:
             break
-        nev = inp
-        inp = input("Alkalmazott születési éve: ")
-        if inp == "#":
-            break
-        szev = int(inp)
-        i = kereses.pri_keres(nev, szev, list)
-        if i == None:
-            print("Nincs ilyen alkalmazott.")
-            continue
-        if list[i]["STAT"] == "AKTÍV":
-            inp = input(f"Biztos inaktiválja a(z) {list[i]['NEV']} alkalmazottat? (IGEN/NEM): ")
+
+        if szotar_lista[i]["STAT"] == "AKTÍV":
+            inp = input(f"Biztos inaktiválja a(z) {szotar_lista[i]['NEV']} alkalmazottat? (IGEN/NEM): ")
             if inp == "IGEN":
-                inp = input(f"Milyen évtől legyen inaktív (Kezdés éve: {list[i]['STARTEV']}):")
+                inp = input(f"Milyen évtől legyen inaktív (Kezdés éve: {szotar_lista[i]['STARTEV']}):")
                 if inp == "#":
                     break
-                if int(inp) < list[i]["STARTEV"]:
+                if int(inp) < szotar_lista[i]["STARTEV"]:
                     print("Nem lehet korábbi évtől inaktív.")
                 else:
-                    list[i]["STAT"] = "INAKTÍV"
-                    print(f"A(z) {nev} alkalmazott inaktív státuszba lett téve.")
+                    szotar_lista[i]["STAT"] = "INAKTÍV"
+                    szotar_lista[i]["INAKTEV"] = int(inp)
+                    print(f"A(z) {szotar_lista[i]['NEV']} alkalmazott inaktív státuszba lett téve.")
+                    print("---------------------------------")
         else:
-            inp = input(f"Biztos aktiválja a(z) {list[i]['NEV']} alkalmazottat? (IGEN/NEM): ")
+            inp = input(f"Biztos aktiválja a(z) {szotar_lista[i]['NEV']} alkalmazottat? (IGEN/NEM): ")
             if inp == "IGEN":
-                    list[i]["STAT"] = "AKTÍV"
-                    list[i]["INAKTEV"] = 0
-                    print(f"A(z) {nev} alkalmazottat aktív státuszba helyeztük.")
-                    
-                                
+                    szotar_lista[i]["STAT"] = "AKTÍV"
+                    szotar_lista[i]["INAKTEV"] = 0
+                    print(f"A(z) {szotar_lista[i]['NEV']} alkalmazottat aktív státuszba helyeztük.")
+                    print("---------------------------------")

@@ -1,6 +1,6 @@
 import karbantartas
 
-def m_karbantartas (list):
+def m_karbantartas (szotar_lista):
     menube = ""
     while menube != "5":
         print("Alkalmazott karbantartó rendszer")
@@ -12,12 +12,12 @@ def m_karbantartas (list):
         print("5. Vissza")
         menube = input("--> ")
         match menube:
-            case "1": karbantartas.felvitel (list=list)
-            case "2": karbantartas.modositas (lista=list)
-            case "3": karbantartas.torles (list=list)
-            case "4": karbantartas.aktinakt (list=list)
+            case "1": karbantartas.felvitel (szotar_lista)
+            case "2": karbantartas.modositas (szotar_lista)
+            case "3": karbantartas.torles (szotar_lista)
+            case "4": karbantartas.aktinakt (szotar_lista)
 
-def m_riportok (list):
+def m_riportok (szotar_lista):
     menube = ""
     while menube != "7":
         print("Alkalmazott karbantartó rendszer")
@@ -31,7 +31,7 @@ def m_riportok (list):
         print("7. Vissza")
         menube = input("--> ")
 
-def m_kereses (list):
+def m_kereses (szotar_lista):
     menube = ""
     while menube != "4":
         print("Alkalmazott karbantartó rendszer")
@@ -42,7 +42,7 @@ def m_kereses (list):
         print("4. Vissza")
         menube = input("--> ")
 
-def m_fomenu (list):
+def m_fomenu (szotar_lista):
     menube = ""
     while menube != "4":
         print("Alkalmazott karbantartó rendszer")
@@ -53,8 +53,8 @@ def m_fomenu (list):
         print("4. Kilépés")
         menube = input("--> ")
         match menube:
-            case "1": m_karbantartas (list=list)
-            case "2": m_riportok (list=list)
-            case "3": m_kereses (list=list)
+            case "1": m_karbantartas (szotar_lista)
+            case "2": m_riportok (szotar_lista)
+            case "3": m_kereses (szotar_lista)
             case "4": print("Kilépés...")
             case _  : print("Hiba! Kérem adjon meg egy érvényes menüpontot!")

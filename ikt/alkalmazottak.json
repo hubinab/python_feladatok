@@ -1,18 +1,10 @@
 [
     {
-        "NEV": "V\u00e9g B\u00e9la",
-        "SZEV": 1967,
-        "FIZU": 687000,
-        "STAT": "AKT\u00cdV",
-        "STARTEV": 1998,
-        "INAKTEV": 0
-    },
-    {
         "NEV": "Varga \u00c9va",
         "SZEV": 1964,
-        "FIZU": 458000,
+        "FIZU": 980000,
         "STAT": "INAKT\u00cdV",
-        "STARTEV": 1996,
+        "STARTEV": 0,
         "INAKTEV": 2016
     },
     {
@@ -53,14 +45,6 @@
         "FIZU": 660000,
         "STAT": "AKT\u00cdV",
         "STARTEV": 1998,
-        "INAKTEV": 0
-    },
-    {
-        "NEV": "Nagy Lajos",
-        "SZEV": 1988,
-        "FIZU": 300000,
-        "STAT": "AKT\u00cdV",
-        "STARTEV": 2013,
         "INAKTEV": 0
     },
     {
@@ -141,6 +125,22 @@
         "FIZU": 876000,
         "STAT": "INAKT\u00cdV",
         "STARTEV": 1990,
+        "INAKTEV": 2024
+    },
+    {
+        "NEV": "V\u00e9g B\u00e9la",
+        "SZEV": 1972,
+        "FIZU": 902678,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 1996,
+        "INAKTEV": 0
+    },
+    {
+        "NEV": "Kov\u00e1cs Istv\u00e1n",
+        "SZEV": 1991,
+        "FIZU": 874129,
+        "STAT": "AKT\u00cdV",
+        "STARTEV": 2018,
         "INAKTEV": 0
     }
 ]
