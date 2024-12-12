@@ -28,7 +28,7 @@ print(*allatok, sep=';')
 """
 # A with-en belül lehet a filebe változot hasznalni, 
 # with után bezárja a filet
-with open("allatok.txt", "r", encoding="utf-8") as filebe:
+with open(".//Python_08-20241205/allatok.txt", "r", encoding="utf-8") as filebe:
     sor = filebe.readline().strip()
     #for i in range(21):
     while sor != "":
@@ -58,7 +58,7 @@ with open("k_allatok.txt", "w", encoding="utf-8") as fileki:
 
 # Lehet print-el is file-ba irni. 
 # A "file="-vel átlehet irányítani a standard output-ot file-ba
-with open("k_allatok.txt", "w", encoding="utf-8") as fileki:
+with open(".//Python_08-20241205/k_allatok.txt", "w", encoding="utf-8") as fileki:
     for i in range(len(allatok)):
         if allatok[i].startswith("k"):
             print(allatok[i], file=fileki)
