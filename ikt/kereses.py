@@ -45,7 +45,7 @@ def lista10 (szotar_lista, karb=False, tol=None):
         i = tol
     
     while inp != "#":
-        j = i+9
+        j = i+10
         if j >= len(szotar_lista):
             j = len(szotar_lista)
 
